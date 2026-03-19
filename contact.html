@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact · Shreejal Ghimire 🇳🇵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<canvas id="mountainCanvas"></canvas>
+<div class="prayer-flags" id="prayerFlags"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav class="navbar scrolled" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <svg class="logo-khukuri" viewBox="0 0 36 20" fill="none">
+      <path d="M2 10 Q10 2 34 10 Q10 18 2 10Z" fill="var(--crimson)" opacity=".7"/>
+      <path d="M2 10 L8 8 L8 12Z" fill="var(--gold)"/>
+    </svg>
+    <span>Shreejal</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="contact.html" class="nav-active">Contact</a></li>
+  </ul>
+  <a href="https://github.com/shreejalghimire" target="_blank" class="nav-cta">GitHub ↗</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-overlay" id="mobOverlay">
+  <button class="mob-close" id="mobClose">✕</button>
+  <div class="mob-mandala"></div>
+  <nav class="mob-nav">
+    <a href="index.html" onclick="closeMob()">Home</a>
+    <a href="index.html#about" onclick="closeMob()">About</a>
+    <a href="index.html#skills" onclick="closeMob()">Skills</a>
+    <a href="index.html#projects" onclick="closeMob()">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<!-- CONTACT PAGE -->
+<main class="contact-page">
+
+  <!-- Mandala accent -->
+  <div class="contact-mandala">
+    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" opacity=".07">
+      <g transform="translate(150,150)">
+        <circle r="130" fill="none" stroke="var(--crimson)" stroke-width="1"/>
+        <circle r="100" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+        <circle r="70"  fill="none" stroke="var(--crimson)" stroke-width="1"/>
+        <circle r="40"  fill="none" stroke="var(--gold)" stroke-width="1.5"/>
+        <circle r="12"  fill="var(--crimson)"/>
+        <g stroke="var(--gold)" stroke-width="1" fill="none">
+          <line x1="0" y1="-130" x2="0" y2="-40"/>
+          <line x1="0" y1="40"   x2="0" y2="130"/>
+          <line x1="-130" y1="0" x2="-40" y2="0"/>
+          <line x1="40"  y1="0" x2="130" y2="0"/>
+          <line x1="-92"  y1="-92"  x2="-28" y2="-28"/>
+          <line x1="92"   y1="-92"  x2="28"  y2="-28"/>
+          <line x1="-92"  y1="92"   x2="-28" y2="28"/>
+          <line x1="92"   y1="92"   x2="28"  y2="28"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="contact-header fade-up">
+    <div class="ch-eyebrow">
+      <span class="eyebrow-dot"></span>
+      नमस्ते — Let's Connect
+    </div>
+    <h1 class="contact-title">Say <em>Hello</em><span class="blink">_</span></h1>
+    <p class="contact-sub">
+      Have a project idea, a question, or just want to say नमस्ते?<br/>
+      I'd love to hear from you.
+    </p>
+  </div>
+
+  <div class="prayer-color-bar contact-pcb">
+    <span class="pcb blue"></span>
+    <span class="pcb white"></span>
+    <span class="pcb red"></span>
+    <span class="pcb green"></span>
+    <span class="pcb yellow"></span>
+  </div>
+
+  <div class="contact-layout fade-up delay-2">
+
+    <!-- INFO PANEL -->
+    <aside class="info-panel">
+      <div class="ip-card">
+        <div class="ip-title">Quick Info</div>
+        <div class="ip-item">
+          <span>🏔</span>
+          <div><strong>Location</strong><span>Kathmandu, Nepal 🇳🇵</span></div>
+        </div>
+        <div class="ip-item">
+          <span>🎓</span>
+          <div><strong>Status</strong><span>Grade 11 CS · NEB</span></div>
+        </div>
+        <div class="ip-item">
+          <span>🚀</span>
+          <div><strong>GitHub</strong><a href="https://github.com/shreejalghimire" target="_blank">@shreejalghimire</a></div>
+        </div>
+        <div class="ip-item">
+          <span>⏱</span>
+          <div><strong>Response</strong><span>Within 24 hours</span></div>
+        </div>
+      </div>
+
+      <div class="ip-open">
+        <span class="eyebrow-dot"></span>
+        Open to collaborations &amp; learning
+      </div>
+
+      <!-- Nepali flag display -->
+      <div class="ip-flag-card">
+        <svg viewBox="0 0 60 72" class="np-flag-big">
+          <polygon points="0,0 48,24 0,48" fill="#003893"/>
+          <polygon points="0,48 56,72 0,72" fill="#003893"/>
+          <polygon points="4,4 44,24 4,44" fill="#DC143C"/>
+          <polygon points="4,50 52,70 4,70" fill="#DC143C"/>
+          <!-- White border lines -->
+          <polygon points="0,0 48,24 0,48" fill="none" stroke="white" stroke-width="1.5"/>
+          <polygon points="0,48 56,72 0,72" fill="none" stroke="white" stroke-width="1.5"/>
+          <!-- Moon -->
+          <circle cx="18" cy="20" r="5" fill="white" opacity=".9"/>
+          <!-- Sun rays simplified -->
+          <circle cx="18" cy="36" r="6" fill="white" opacity=".9"/>
+          <path d="M18 30 L19.5 34 L18 38 L16.5 34Z" fill="#DC143C"/>
+        </svg>
+        <div>
+          <span class="ip-np-text">नेपाल</span>
+          <span class="ip-np-sub">The Land of the Himalayas</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- FORM -->
+    <div class="form-wrap">
+      <form id="cForm" onsubmit="handleSend(event)">
+
+        <div class="form-row">
+          <div class="fg">
+            <label>Full Name</label>
+            <input type="text" placeholder="e.g. Ram Bahadur" required/>
+          </div>
+          <div class="fg">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" required/>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Gender</label>
+          <div class="pill-group">
+            <label class="pill"><input type="radio" name="gender"/><span>Male</span></label>
+            <label class="pill"><input type="radio" name="gender"/><span>Female</span></label>
+            <label class="pill"><input type="radio" name="gender"/><span>Other</span></label>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Skills You're Interested In</label>
+          <div class="pill-group">
+            <label class="pill"><input type="checkbox"/><span>🌐 Web Dev</span></label>
+            <label class="pill"><input type="checkbox"/><span>💻 Programming</span></label>
+            <label class="pill"><input type="checkbox"/><span>🎨 Design</span></label>
+            <label class="pill"><input type="checkbox"/><span>🤖 AI / ML</span></label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="fg">
+            <label>Message Type</label>
+            <div class="sel-wrap">
+              <select>
+                <option value="">Select type…</option>
+                <option>General Inquiry</option>
+                <option>Project Collaboration</option>
+                <option>Feedback</option>
+                <option>Other</option>
+              </select>
+              <span class="sel-arr">▾</span>
+            </div>
+          </div>
+          <div class="fg">
+            <label>Subject</label>
+            <input type="text" placeholder="Brief subject line"/>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label>Your Message</label>
+          <textarea rows="5" placeholder="Write your message here… / यहाँ आफ्नो सन्देश लेख्नुहोस्…" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary send-btn">
+          <span id="btnTxt">Send Message — नमस्ते 🚀</span>
+        </button>
+
+        <div class="form-ok" id="formOk">
+          🙏 धन्यवाद! Message received — I'll reply soon!
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-mountains">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,80 L0,50 L100,20 L200,45 L320,10 L440,40 L540,18 L660,42 L760,15 L880,38 L980,20 L1100,45 L1200,22 L1320,48 L1440,30 L1440,80Z" fill="rgba(185,28,28,.07)"/>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-np">नमस्ते</span>
+      <span class="footer-name">Shreejal Ghimire</span>
+      <span class="footer-np-flag">🇳🇵</span>
+    </div>
+    <p>© 2026 · Built with ❤️ from Kathmandu, Nepal</p>
+    <div class="footer-links">
+      <a href="https://github.com/shreejalghimire" target="_blank">GitHub ↗</a>
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Prayer flags
+const flagColors=['#003893','#ffffff','#DC143C','#009B4E','#F5A623'];
+const fc=document.getElementById('prayerFlags');
+const ln=document.createElement('div'); ln.className='flag-line';
+for(let i=0;i<16;i++){const p=document.createElement('div');p.className='flag-pennant';p.style.background=flagColors[i%5];ln.appendChild(p);}
+fc.appendChild(ln);
+
+// Canvas
+const mc=document.getElementById('mountainCanvas');
+
+// Cursor
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button,input,textarea,select').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('big');ring.classList.add('big');});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('big');ring.classList.remove('big');});
+});
+
+// Hamburger
+const ham=document.getElementById('hamburger'),mob=document.getElementById('mobOverlay');
+ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.classList.toggle('no-scroll');});
+document.getElementById('mobClose').addEventListener('click',closeMob);
+function closeMob(){ham.classList.remove('open');mob.classList.remove('open');document.body.classList.remove('no-scroll');}
+
+// Submit
+function handleSend(e){
+  e.preventDefault();
+  const b=document.getElementById('btnTxt');
+  b.textContent='Sending…';
+  setTimeout(()=>{
+    document.getElementById('formOk').style.display='block';
+    b.textContent='Sent ✓';
+    document.getElementById('cForm').reset();
+    setTimeout(()=>{b.textContent='Send Message — नमस्ते 🚀';document.getElementById('formOk').style.display='none';},4000);
+  },1200);
+}
+</script>
+</body>
+</html>

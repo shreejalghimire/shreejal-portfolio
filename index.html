@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shreejal Ghimire | Developer from Nepal 🇳🇵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ░░ MOUNTAIN CANVAS ░░ -->
+<canvas id="mountainCanvas"></canvas>
+
+<!-- ░░ PRAYER FLAGS ░░ -->
+<div class="prayer-flags" id="prayerFlags"></div>
+
+<!-- ░░ CUSTOM CURSOR ░░ -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ░░░░░░░░░ NAVBAR ░░░░░░░░░ -->
+<nav class="navbar" id="navbar">
+  <a href="#home" class="nav-logo">
+    <svg class="logo-khukuri" viewBox="0 0 36 20" fill="none">
+      <path d="M2 10 Q10 2 34 10 Q10 18 2 10Z" fill="var(--crimson)" opacity=".7"/>
+      <path d="M2 10 L8 8 L8 12Z" fill="var(--gold)"/>
+    </svg>
+    <span>Shreejal</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="https://github.com/shreejalghimire" target="_blank" class="nav-cta">GitHub ↗</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-overlay" id="mobOverlay">
+  <button class="mob-close" id="mobClose">✕</button>
+  <div class="mob-mandala"></div>
+  <nav class="mob-nav">
+    <a href="#home"     onclick="closeMob()">Home</a>
+    <a href="#about"    onclick="closeMob()">About</a>
+    <a href="#skills"   onclick="closeMob()">Skills</a>
+    <a href="#projects" onclick="closeMob()">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://github.com/shreejalghimire" target="_blank">GitHub ↗</a>
+  </nav>
+</div>
+
+<!-- ░░░░░░░░░ HERO ░░░░░░░░░ -->
+<section id="home" class="hero">
+
+  <!-- Mandala background -->
+  <div class="mandala-bg">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="mandala-svg">
+      <g transform="translate(250,250)">
+        <!-- Concentric rings -->
+        <circle r="220" fill="none" stroke="rgba(185,28,28,.12)" stroke-width="1"/>
+        <circle r="180" fill="none" stroke="rgba(185,28,28,.1)" stroke-width="1"/>
+        <circle r="140" fill="none" stroke="rgba(212,160,23,.1)" stroke-width="1.5"/>
+        <circle r="100" fill="none" stroke="rgba(185,28,28,.12)" stroke-width="1"/>
+        <circle r="60"  fill="none" stroke="rgba(212,160,23,.15)" stroke-width="1.5"/>
+        <!-- 16-petal flower -->
+        <g opacity=".1">
+          <circle cx="0" cy="-140" r="28" fill="var(--crimson)"/>
+          <circle cx="0" cy="140"  r="28" fill="var(--crimson)"/>
+          <circle cx="-140" cy="0" r="28" fill="var(--crimson)"/>
+          <circle cx="140"  cy="0" r="28" fill="var(--crimson)"/>
+          <circle cx="-99"  cy="-99" r="22" fill="var(--gold)"/>
+          <circle cx="99"   cy="-99" r="22" fill="var(--gold)"/>
+          <circle cx="-99"  cy="99"  r="22" fill="var(--gold)"/>
+          <circle cx="99"   cy="99"  r="22" fill="var(--gold)"/>
+          <circle cx="-53"  cy="-128" r="14" fill="var(--crimson)" opacity=".5"/>
+          <circle cx="53"   cy="-128" r="14" fill="var(--crimson)" opacity=".5"/>
+          <circle cx="-128" cy="-53"  r="14" fill="var(--crimson)" opacity=".5"/>
+          <circle cx="-128" cy="53"   r="14" fill="var(--crimson)" opacity=".5"/>
+          <circle cx="53"   cy="128"  r="14" fill="var(--crimson)" opacity=".5"/>
+          <circle cx="-53"  cy="128"  r="14" fill="var(--crimson)" opacity=".5"/>
+          <circle cx="128"  cy="-53"  r="14" fill="var(--crimson)" opacity=".5"/>
+          <circle cx="128"  cy="53"   r="14" fill="var(--crimson)" opacity=".5"/>
+        </g>
+        <!-- Triangle pointing up (like flag pennon) -->
+        <polygon points="0,-55 40,30 -40,30" fill="none" stroke="rgba(212,160,23,.2)" stroke-width="1.5"/>
+        <polygon points="0,-30 22,16 -22,16" fill="none" stroke="rgba(212,160,23,.15)" stroke-width="1"/>
+        <!-- Sun dot -->
+        <circle r="8" fill="rgba(212,160,23,.3)"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Snow particles -->
+  <canvas id="snowCanvas" class="snow-canvas"></canvas>
+
+  <div class="hero-content">
+    <div class="hero-flag-badge">
+      <span class="flag-icon">🇳🇵</span>
+      <span>Proudly from Nepal</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="ht-namaste">नमस्ते,</span>
+      <span class="ht-iam">I'm</span>
+      <span class="ht-name">Shreejal<br/>Ghimire</span>
+    </h1>
+
+    <div class="hero-tagline">
+      <span class="htag-line">Aspiring Developer · Grade 11 CS</span>
+      <span class="htag-sep">·</span>
+      <span class="htag-np">From the land of the Himalayas</span>
+    </div>
+
+    <p class="hero-desc">
+      Building the digital future from Kathmandu — one line of code at a time.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work ✦</a>
+      <a href="contact.html" class="btn-outline">Say Namaste →</a>
+    </div>
+
+    <!-- Nepal flag shape -->
+    <div class="mini-flag" title="Nepal 🇳🇵">
+      <svg viewBox="0 0 30 36" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,0 24,12 0,24" fill="#003893"/>
+        <polygon points="0,24 28,36 0,36" fill="#003893"/>
+        <polygon points="2,2 22,12 2,22" fill="#DC143C"/>
+        <polygon points="2,23 26,34 2,34" fill="#DC143C"/>
+        <circle cx="10" cy="12" r="3" fill="white" opacity=".7"/>
+        <polygon points="10,5 11.5,10 7,8.5 13,8.5 8.5,10" fill="white" opacity=".6"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Mountain silhouette at bottom -->
+  <div class="mountain-silhouette">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,200 L0,140 L80,80 L160,120 L260,40 L360,100 L440,60 L520,90 L620,20 L720,70 L820,30 L900,80 L980,50 L1060,90 L1160,45 L1260,100 L1360,70 L1440,110 L1440,200 Z" fill="rgba(0,0,0,.35)"/>
+      <path d="M0,200 L0,160 L100,110 L180,140 L280,80 L380,130 L460,95 L560,120 L660,75 L760,110 L860,85 L940,115 L1040,90 L1140,125 L1240,95 L1340,130 L1440,115 L1440,200 Z" fill="rgba(0,0,0,.45)"/>
+      <path d="M0,200 L0,175 L120,145 L240,165 L320,135 L420,155 L500,130 L600,150 L700,125 L800,150 L900,130 L1000,155 L1100,135 L1200,155 L1300,145 L1400,160 L1440,150 L1440,200 Z" fill="rgba(0,0,0,.6)"/>
+    </svg>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-track"><div class="scroll-thumb"></div></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ░░░░░░░░░ ABOUT ░░░░░░░░░ -->
+<section id="about" class="section about-section">
+  <div class="sec-mandala-accent"></div>
+
+  <div class="sec-header reveal">
+    <span class="sec-num-np">०२</span>
+    <div>
+      <p class="sec-eyebrow">About Me</p>
+      <h2 class="sec-title">A Developer from<br/><em>the Roof of the World</em></h2>
+    </div>
+  </div>
+
+  <div class="about-layout">
+    <div class="about-visual reveal">
+      <div class="av-frame">
+        <div class="av-inner">
+          <span class="av-emoji">👨‍💻</span>
+          <div class="av-spin-ring"></div>
+          <div class="av-dotted-ring"></div>
+        </div>
+        <div class="av-label">From Nepal 🇳🇵</div>
+        <!-- Nepali geometric corners -->
+        <div class="corner-tl"></div>
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="corner-br"></div>
+      </div>
+    </div>
+
+    <div class="about-text reveal delay-2">
+      <blockquote class="np-quote">
+        <span class="np-script">जहाँ छ जोश, त्यहाँ छ जीत।</span>
+        <span class="np-translation">Where there is passion, there is victory.</span>
+      </blockquote>
+
+      <p>I'm Shreejal — a Grade 11 Computer Science student from the beautiful land of Nepal. Growing up in the shadow of the Himalayas has taught me that with enough determination, you can climb any peak — and I bring that same spirit to coding.</p>
+      <p>I'm passionate about web development and design, and I dream of building tech that serves both Nepal and the world. Every project I build is a step toward that summit.</p>
+
+      <div class="about-chips">
+        <span class="chip chip-red">🎓 NEB Grade 11</span>
+        <span class="chip chip-blue">🇳🇵 Kathmandu, Nepal</span>
+        <span class="chip chip-gold">🏔 Himalayan Spirit</span>
+        <span class="chip chip-red">🌐 Web Dev</span>
+        <span class="chip chip-blue">🎨 Graphic Design</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-band reveal delay-3">
+    <div class="sb-item">
+      <span class="sb-num" data-target="2">0</span><sup>+</sup>
+      <span class="sb-lbl">Projects Built</span>
+    </div>
+    <div class="sb-sep">
+      <svg viewBox="0 0 20 40" width="20"><path d="M10 0 L10 40" stroke="rgba(185,28,28,.3)" stroke-dasharray="3 4"/></svg>
+    </div>
+    <div class="sb-item">
+      <span class="sb-num" data-target="4">0</span><sup>+</sup>
+      <span class="sb-lbl">Skills Learned</span>
+    </div>
+    <div class="sb-sep">
+      <svg viewBox="0 0 20 40" width="20"><path d="M10 0 L10 40" stroke="rgba(185,28,28,.3)" stroke-dasharray="3 4"/></svg>
+    </div>
+    <div class="sb-item">
+      <span class="sb-num" data-target="100">0</span><sup>%</sup>
+      <span class="sb-lbl">Passion</span>
+    </div>
+    <div class="sb-sep">
+      <svg viewBox="0 0 20 40" width="20"><path d="M10 0 L10 40" stroke="rgba(185,28,28,.3)" stroke-dasharray="3 4"/></svg>
+    </div>
+    <div class="sb-item">
+      <span class="sb-num" data-target="8848">0</span>
+      <span class="sb-lbl">Meters — Everest's Height</span>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░░░░░░░ SKILLS ░░░░░░░░░ -->
+<section id="skills" class="section skills-section">
+  <div class="sec-header reveal">
+    <span class="sec-num-np">०३</span>
+    <div>
+      <p class="sec-eyebrow">My Toolkit</p>
+      <h2 class="sec-title">Skills &amp; <em>Strengths</em></h2>
+    </div>
+  </div>
+
+  <div class="prayer-color-bar">
+    <span class="pcb blue"></span>
+    <span class="pcb white"></span>
+    <span class="pcb red"></span>
+    <span class="pcb green"></span>
+    <span class="pcb yellow"></span>
+  </div>
+
+  <div class="skills-grid">
+    <div class="sk-card reveal delay-1" data-tilt>
+      <div class="sk-corner-motif"></div>
+      <div class="sk-top">
+        <span class="sk-icon">🌐</span>
+        <span class="sk-badge">01</span>
+      </div>
+      <h3>HTML &amp; CSS</h3>
+      <p>Responsive layouts, modern UI patterns, animations and visual design for the web.</p>
+      <div class="sk-bar-wrap">
+        <div class="sk-bar"><div class="sk-fill sk-fill-1" data-w="80"></div></div>
+        <span class="sk-pct">80%</span>
+      </div>
+    </div>
+    <div class="sk-card reveal delay-2" data-tilt>
+      <div class="sk-corner-motif"></div>
+      <div class="sk-top">
+        <span class="sk-icon">💻</span>
+        <span class="sk-badge">02</span>
+      </div>
+      <h3>C Programming</h3>
+      <p>Logic building, algorithms, data structures and fundamental programming concepts.</p>
+      <div class="sk-bar-wrap">
+        <div class="sk-bar"><div class="sk-fill sk-fill-2" data-w="65"></div></div>
+        <span class="sk-pct">65%</span>
+      </div>
+    </div>
+    <div class="sk-card reveal delay-3" data-tilt>
+      <div class="sk-corner-motif"></div>
+      <div class="sk-top">
+        <span class="sk-icon">🎨</span>
+        <span class="sk-badge">03</span>
+      </div>
+      <h3>Graphic Design</h3>
+      <p>Visual hierarchy, color theory, typography and creative composition.</p>
+      <div class="sk-bar-wrap">
+        <div class="sk-bar"><div class="sk-fill sk-fill-3" data-w="70"></div></div>
+        <span class="sk-pct">70%</span>
+      </div>
+    </div>
+    <div class="sk-card reveal delay-4" data-tilt>
+      <div class="sk-corner-motif"></div>
+      <div class="sk-top">
+        <span class="sk-icon">🧠</span>
+        <span class="sk-badge">04</span>
+      </div>
+      <h3>Problem Solving</h3>
+      <p>Breaking complex problems into elegant, efficient and creative solutions.</p>
+      <div class="sk-bar-wrap">
+        <div class="sk-bar"><div class="sk-fill sk-fill-4" data-w="75"></div></div>
+        <span class="sk-pct">75%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░░░░░░░ PROJECTS ░░░░░░░░░ -->
+<section id="projects" class="section projects-section">
+  <div class="sec-header reveal">
+    <span class="sec-num-np">०४</span>
+    <div>
+      <p class="sec-eyebrow">My Work</p>
+      <h2 class="sec-title">Projects I've <em>Built</em></h2>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    <div class="proj-card proj-featured reveal delay-1" data-tilt>
+      <div class="proj-flag-stripe"></div>
+      <div class="proj-head">
+        <span class="proj-idx">०१</span>
+        <div class="proj-tags">
+          <span class="ptag">HTML</span>
+          <span class="ptag">CSS</span>
+          <span class="ptag live">● Live</span>
+        </div>
+      </div>
+      <h3>Portfolio Website</h3>
+      <p>A personal developer portfolio with Nepali-inspired design, modern animations and fully responsive layout — crafted with pride.</p>
+      <div class="proj-foot">
+        <span class="proj-year">2026</span>
+        <a href="#" class="proj-link">View Project ↗</a>
+      </div>
+    </div>
+
+    <div class="proj-card reveal delay-2" data-tilt>
+      <div class="proj-flag-stripe"></div>
+      <div class="proj-head">
+        <span class="proj-idx">०२</span>
+        <div class="proj-tags">
+          <span class="ptag">C Lang</span>
+          <span class="ptag done">● Complete</span>
+        </div>
+      </div>
+      <h3>Calculator</h3>
+      <p>A command-line calculator in C supporting all arithmetic operations, built to sharpen programming fundamentals.</p>
+      <div class="proj-foot">
+        <span class="proj-year">2025</span>
+        <a href="https://github.com/shreejalghimire" class="proj-link" target="_blank">GitHub ↗</a>
+      </div>
+    </div>
+
+    <div class="proj-card proj-soon reveal delay-3">
+      <div class="soon-inner">
+        <div class="soon-icon">⛰️</div>
+        <h3>Climbing Higher</h3>
+        <p>New projects in the pipeline — like summiting Everest, one step at a time.</p>
+        <div class="dot-loader"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="video-wrap reveal delay-4">
+    <div class="video-head">
+      <span class="vtag">▶ Learning Journey</span>
+      <span class="vsub">A window into my dev world</span>
+    </div>
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen title="Learning"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer class="footer">
+  <div class="footer-mountains">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,50 L100,20 L200,45 L320,10 L440,40 L540,18 L660,42 L760,15 L880,38 L980,20 L1100,45 L1200,22 L1320,48 L1440,30 L1440,80Z" fill="rgba(185,28,28,.07)"/>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-np">नमस्ते</span>
+      <span class="footer-name">Shreejal Ghimire</span>
+      <span class="footer-np-flag">🇳🇵</span>
+    </div>
+    <p>© 2026 · Built with ❤️ from Kathmandu, Nepal</p>
+    <div class="footer-links">
+      <a href="https://github.com/shreejalghimire" target="_blank">GitHub ↗</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── MOUNTAIN + SNOW CANVAS ── */
+const mc = document.getElementById('mountainCanvas');
+const mctx = mc.getContext('2d');
+let W, H;
+function resizeMC() { W = mc.width = window.innerWidth; H = mc.height = window.innerHeight; }
+resizeMC(); window.addEventListener('resize', resizeMC);
+
+// Snow particles
+const sc = document.getElementById('snowCanvas');
+const sctx = sc.getContext('2d');
+function resizeSC() { sc.width = sc.offsetWidth; sc.height = sc.offsetHeight; }
+resizeSC();
+const flakes = Array.from({length:80},()=>({
+  x: Math.random()*1440, y: Math.random()*600,
+  r: Math.random()*2+.5,
+  vx: (Math.random()-.5)*.3,
+  vy: Math.random()*.6+.2,
+  a: Math.random()*.5+.2
+}));
+function snowTick(){
+  sctx.clearRect(0,0,sc.width,sc.height);
+  flakes.forEach(f=>{
+    f.x+=f.vx; f.y+=f.vy;
+    if(f.y>sc.height) { f.y=0; f.x=Math.random()*sc.width; }
+    sctx.beginPath(); sctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+    sctx.fillStyle=`rgba(255,255,255,${f.a})`; sctx.fill();
+  });
+  requestAnimationFrame(snowTick);
+}
+snowTick();
+
+/* ── PRAYER FLAGS ── */
+const flagColors = ['#003893','#ffffff','#DC143C','#009B4E','#F5A623'];
+const flagContainer = document.getElementById('prayerFlags');
+const line = document.createElement('div');
+line.className = 'flag-line';
+for(let i=0;i<16;i++){
+  const flag = document.createElement('div');
+  flag.className='flag-pennant';
+  flag.style.background = flagColors[i%5];
+  line.appendChild(flag);
+}
+flagContainer.appendChild(line);
+
+/* ── CURSOR ── */
+const cur = document.getElementById('cursor'), ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button,[data-tilt]').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('big');ring.classList.add('big');});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('big');ring.classList.remove('big');});
+});
+
+/* ── NAVBAR ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',scrollY>60);
+});
+
+/* ── HAMBURGER ── */
+const ham=document.getElementById('hamburger'), mob=document.getElementById('mobOverlay');
+ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.classList.toggle('no-scroll');});
+document.getElementById('mobClose').addEventListener('click',closeMob);
+function closeMob(){ham.classList.remove('open');mob.classList.remove('open');document.body.classList.remove('no-scroll');}
+
+/* ── SCROLL REVEAL ── */
+new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.12})
+  .observe||(entries=>{entries.forEach(e=>e.target.classList.add('visible'));});
+const revEls=document.querySelectorAll('.reveal');
+const revObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.12});
+revEls.forEach(el=>revObs.observe(el));
+
+/* ── SKILL BARS ── */
+const fills=document.querySelectorAll('.sk-fill');
+const barObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';}}),{threshold:.5});
+fills.forEach(f=>barObs.observe(f));
+
+/* ── COUNTERS ── */
+function countUp(el,target){let s=null;(function step(ts){if(!s)s=ts;const p=Math.min((ts-s)/1600,1);el.textContent=Math.floor(p*target);if(p<1)requestAnimationFrame(step);else el.textContent=target.toLocaleString();})(performance.now());}
+const nums=document.querySelectorAll('.sb-num');
+const cntObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){countUp(e.target,+e.target.dataset.target);cntObs.unobserve(e.target);}}),{threshold:.5});
+nums.forEach(n=>cntObs.observe(n));
+
+/* ── TILT ── */
+document.querySelectorAll('[data-tilt]').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=((e.clientX-r.left)/r.width-.5)*14,y=((e.clientY-r.top)/r.height-.5)*-14;c.style.transform=`perspective(700px) rotateY(${x}deg) rotateX(${y}deg) scale(1.03)`;});
+  c.addEventListener('mouseleave',()=>c.style.transform='perspective(700px) rotateY(0) rotateX(0) scale(1)');
+});
+</script>
+</body>
+</html>
