@@ -3,385 +3,261 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shreejal Ghimire | Developer from Nepal 🇳🇵</title>
+  <title>Shreejal Ghimire | Grade 11 Developer 🇳🇵</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- ░░ MOUNTAIN CANVAS ░░ -->
-<canvas id="mountainCanvas"></canvas>
-
-<!-- ░░ PRAYER FLAGS ░░ -->
-<div class="prayer-flags" id="prayerFlags"></div>
-
-<!-- ░░ CUSTOM CURSOR ░░ -->
-<div class="cursor" id="cursor"></div>
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- ░░░░░░░░░ NAVBAR ░░░░░░░░░ -->
+<!-- PRAYER FLAGS -->
+<div class="prayer-flags" id="prayerFlags"></div>
+
+<!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <a href="#home" class="nav-logo">
-    <svg class="logo-khukuri" viewBox="0 0 36 20" fill="none">
-      <path d="M2 10 Q10 2 34 10 Q10 18 2 10Z" fill="var(--crimson)" opacity=".7"/>
+    <svg class="logo-khukuri" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 10 Q10 2 34 10 Q10 18 2 10Z" fill="var(--red)" opacity=".8"/>
       <path d="M2 10 L8 8 L8 12Z" fill="var(--gold)"/>
     </svg>
     <span>Shreejal</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#skills">SKILLS</a></li>
+    <li><a href="#projects">PROJECTS</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
   </ul>
-  <a href="https://github.com/shreejalghimire" target="_blank" class="nav-cta">GitHub ↗</a>
+  <a href="https://github.com/shreejalghimire" target="_blank" class="nav-gh">GitHub ↗</a>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mob-overlay" id="mobOverlay">
-  <button class="mob-close" id="mobClose">✕</button>
-  <div class="mob-mandala"></div>
-  <nav class="mob-nav">
-    <a href="#home"     onclick="closeMob()">Home</a>
-    <a href="#about"    onclick="closeMob()">About</a>
-    <a href="#skills"   onclick="closeMob()">Skills</a>
-    <a href="#projects" onclick="closeMob()">Projects</a>
-    <a href="contact.html">Contact</a>
-    <a href="https://github.com/shreejalghimire" target="_blank">GitHub ↗</a>
-  </nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="#home"     onclick="closeMob()">Home</a>
+  <a href="#about"    onclick="closeMob()">About</a>
+  <a href="#skills"   onclick="closeMob()">Skills</a>
+  <a href="#projects" onclick="closeMob()">Projects</a>
+  <a href="contact.html">Contact</a>
+  <a href="https://github.com/shreejalghimire" target="_blank">GitHub ↗</a>
 </div>
 
-<!-- ░░░░░░░░░ HERO ░░░░░░░░░ -->
+<!-- ░░ HERO ░░ -->
 <section id="home" class="hero">
-
-  <!-- Mandala background -->
-  <div class="mandala-bg">
-    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="mandala-svg">
-      <g transform="translate(250,250)">
-        <!-- Concentric rings -->
-        <circle r="220" fill="none" stroke="rgba(185,28,28,.12)" stroke-width="1"/>
-        <circle r="180" fill="none" stroke="rgba(185,28,28,.1)" stroke-width="1"/>
-        <circle r="140" fill="none" stroke="rgba(212,160,23,.1)" stroke-width="1.5"/>
-        <circle r="100" fill="none" stroke="rgba(185,28,28,.12)" stroke-width="1"/>
-        <circle r="60"  fill="none" stroke="rgba(212,160,23,.15)" stroke-width="1.5"/>
-        <!-- 16-petal flower -->
-        <g opacity=".1">
-          <circle cx="0" cy="-140" r="28" fill="var(--crimson)"/>
-          <circle cx="0" cy="140"  r="28" fill="var(--crimson)"/>
-          <circle cx="-140" cy="0" r="28" fill="var(--crimson)"/>
-          <circle cx="140"  cy="0" r="28" fill="var(--crimson)"/>
-          <circle cx="-99"  cy="-99" r="22" fill="var(--gold)"/>
-          <circle cx="99"   cy="-99" r="22" fill="var(--gold)"/>
-          <circle cx="-99"  cy="99"  r="22" fill="var(--gold)"/>
-          <circle cx="99"   cy="99"  r="22" fill="var(--gold)"/>
-          <circle cx="-53"  cy="-128" r="14" fill="var(--crimson)" opacity=".5"/>
-          <circle cx="53"   cy="-128" r="14" fill="var(--crimson)" opacity=".5"/>
-          <circle cx="-128" cy="-53"  r="14" fill="var(--crimson)" opacity=".5"/>
-          <circle cx="-128" cy="53"   r="14" fill="var(--crimson)" opacity=".5"/>
-          <circle cx="53"   cy="128"  r="14" fill="var(--crimson)" opacity=".5"/>
-          <circle cx="-53"  cy="128"  r="14" fill="var(--crimson)" opacity=".5"/>
-          <circle cx="128"  cy="-53"  r="14" fill="var(--crimson)" opacity=".5"/>
-          <circle cx="128"  cy="53"   r="14" fill="var(--crimson)" opacity=".5"/>
-        </g>
-        <!-- Triangle pointing up (like flag pennon) -->
-        <polygon points="0,-55 40,30 -40,30" fill="none" stroke="rgba(212,160,23,.2)" stroke-width="1.5"/>
-        <polygon points="0,-30 22,16 -22,16" fill="none" stroke="rgba(212,160,23,.15)" stroke-width="1"/>
-        <!-- Sun dot -->
-        <circle r="8" fill="rgba(212,160,23,.3)"/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- Snow particles -->
-  <canvas id="snowCanvas" class="snow-canvas"></canvas>
+  <canvas id="snowCanvas"></canvas>
 
   <div class="hero-content">
-    <div class="hero-flag-badge">
-      <span class="flag-icon">🇳🇵</span>
-      <span>Proudly from Nepal</span>
+    <div class="hero-left">
+      <div class="hero-badge">🇳🇵 From Kathmandu, Nepal</div>
+
+      <span class="hero-greeting">नमस्ते, I'm</span>
+      <h1 class="hero-name">
+        Shreejal<br/>
+        <span class="red">Ghimire.</span>
+      </h1>
+
+      <div class="hero-role">
+        <span class="role-dot"></span>
+        Grade 11 CS Student
+        <span class="role-dot"></span>
+        Web Dev Enthusiast
+        <span class="role-dot"></span>
+        Nepal 🏔
+      </div>
+
+      <p class="hero-desc">
+        Building things on the web from the land of Nepal. Still learning, always coding — one project at a time.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn-red">See My Work ↓</a>
+        <a href="contact.html" class="btn-ghost">Say Namaste →</a>
+      </div>
     </div>
 
-    <h1 class="hero-title">
-      <span class="ht-namaste">नमस्ते,</span>
-      <span class="ht-iam">I'm</span>
-      <span class="ht-name">Shreejal<br/>Ghimire</span>
-    </h1>
-
-    <div class="hero-tagline">
-      <span class="htag-line">Aspiring Developer · Grade 11 CS</span>
-      <span class="htag-sep">·</span>
-      <span class="htag-np">From the land of the Himalayas</span>
-    </div>
-
-    <p class="hero-desc">
-      Building the digital future from Kathmandu — one line of code at a time.
-    </p>
-
-    <div class="hero-btns">
-      <a href="#projects" class="btn-primary">View My Work ✦</a>
-      <a href="contact.html" class="btn-outline">Say Namaste →</a>
-    </div>
-
-    <!-- Nepal flag shape -->
-    <div class="mini-flag" title="Nepal 🇳🇵">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" alt="Flag of Nepal" style="width:30px;height:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));"/>
+    <div class="hero-right">
+      <div class="avatar-card" id="avatarCard">
+        <div class="av-card-corner tl"></div>
+        <div class="av-card-corner tr"></div>
+        <div class="av-card-corner bl"></div>
+        <div class="av-card-corner br"></div>
+        <span class="av-emoji" id="avEmoji">👨‍💻</span>
+        <div class="av-name">Shreejal</div>
+        <span class="av-tag">@shreejalghimire</span>
+        <div class="av-np">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" style="width:18px;height:auto;" alt="Nepal flag"/>
+          Kathmandu, Nepal
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Mountain silhouette at bottom -->
-  <div class="mountain-silhouette">
-    <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,200 L0,140 L80,80 L160,120 L260,40 L360,100 L440,60 L520,90 L620,20 L720,70 L820,30 L900,80 L980,50 L1060,90 L1160,45 L1260,100 L1360,70 L1440,110 L1440,200 Z" fill="rgba(0,0,0,.35)"/>
-      <path d="M0,200 L0,160 L100,110 L180,140 L280,80 L380,130 L460,95 L560,120 L660,75 L760,110 L860,85 L940,115 L1040,90 L1140,125 L1240,95 L1340,130 L1440,115 L1440,200 Z" fill="rgba(0,0,0,.45)"/>
-      <path d="M0,200 L0,175 L120,145 L240,165 L320,135 L420,155 L500,130 L600,150 L700,125 L800,150 L900,130 L1000,155 L1100,135 L1200,155 L1300,145 L1400,160 L1440,150 L1440,200 Z" fill="rgba(0,0,0,.6)"/>
-    </svg>
-  </div>
-
-  <div class="hero-scroll-hint">
+  <!-- scroll hint -->
+  <div class="scroll-hint">
     <div class="scroll-track"><div class="scroll-thumb"></div></div>
     <span>Scroll</span>
   </div>
-</section>
 
-<!-- ░░░░░░░░░ ABOUT ░░░░░░░░░ -->
-<section id="about" class="section about-section">
-  <div class="sec-mandala-accent"></div>
-
-  <div class="sec-header reveal">
-    <span class="sec-num-np">०२</span>
-    <div>
-      <p class="sec-eyebrow">About Me</p>
-      <h2 class="sec-title">A Developer from<br/><em>the Roof of the World</em></h2>
-    </div>
-  </div>
-
-  <div class="about-layout">
-    <div class="about-visual reveal">
-      <div class="av-frame">
-        <div class="av-inner">
-          <span class="av-emoji">👨‍💻</span>
-          <div class="av-spin-ring"></div>
-          <div class="av-dotted-ring"></div>
-        </div>
-        <div class="av-label">From Nepal 🇳🇵</div>
-        <!-- Nepali geometric corners -->
-        <div class="corner-tl"></div>
-        <div class="corner-tr"></div>
-        <div class="corner-bl"></div>
-        <div class="corner-br"></div>
-      </div>
-    </div>
-
-    <div class="about-text reveal delay-2">
-      <blockquote class="np-quote">
-        <span class="np-script">जहाँ छ जोश, त्यहाँ छ जीत।</span>
-        <span class="np-translation">Where there is passion, there is victory.</span>
-      </blockquote>
-
-      <p>I'm Shreejal — a Grade 11 Computer Science student from the beautiful land of Nepal. Growing up in the shadow of the Himalayas has taught me that with enough determination, you can climb any peak — and I bring that same spirit to coding.</p>
-      <p>I'm passionate about web development and design, and I dream of building tech that serves both Nepal and the world. Every project I build is a step toward that summit.</p>
-
-      <div class="about-chips">
-        <span class="chip chip-red">🎓 NEB Grade 11</span>
-        <span class="chip chip-blue">🇳🇵 Kathmandu, Nepal</span>
-        <span class="chip chip-gold">🏔 Himalayan Spirit</span>
-        <span class="chip chip-red">🌐 Web Dev</span>
-        <span class="chip chip-blue">🎨 Graphic Design</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="stats-band reveal delay-3">
-    <div class="sb-item">
-      <span class="sb-num" data-target="2">0</span><sup>+</sup>
-      <span class="sb-lbl">Projects Built</span>
-    </div>
-    <div class="sb-sep">
-      <svg viewBox="0 0 20 40" width="20"><path d="M10 0 L10 40" stroke="rgba(185,28,28,.3)" stroke-dasharray="3 4"/></svg>
-    </div>
-    <div class="sb-item">
-      <span class="sb-num" data-target="4">0</span><sup>+</sup>
-      <span class="sb-lbl">Skills Learned</span>
-    </div>
-    <div class="sb-sep">
-      <svg viewBox="0 0 20 40" width="20"><path d="M10 0 L10 40" stroke="rgba(185,28,28,.3)" stroke-dasharray="3 4"/></svg>
-    </div>
-    <div class="sb-item">
-      <span class="sb-num" data-target="100">0</span><sup>%</sup>
-      <span class="sb-lbl">Passion</span>
-    </div>
-    <div class="sb-sep">
-      <svg viewBox="0 0 20 40" width="20"><path d="M10 0 L10 40" stroke="rgba(185,28,28,.3)" stroke-dasharray="3 4"/></svg>
-    </div>
-    <div class="sb-item">
-      <span class="sb-num" data-target="8848">0</span>
-      <span class="sb-lbl">Meters — Everest's Height</span>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░░░░░░░ SKILLS ░░░░░░░░░ -->
-<section id="skills" class="section skills-section">
-  <div class="sec-header reveal">
-    <span class="sec-num-np">०३</span>
-    <div>
-      <p class="sec-eyebrow">My Toolkit</p>
-      <h2 class="sec-title">Skills &amp; <em>Strengths</em></h2>
-    </div>
-  </div>
-
-  <div class="prayer-color-bar">
-    <span class="pcb blue"></span>
-    <span class="pcb white"></span>
-    <span class="pcb red"></span>
-    <span class="pcb green"></span>
-    <span class="pcb yellow"></span>
-  </div>
-
-  <div class="skills-grid">
-    <div class="sk-card reveal delay-1" data-tilt>
-      <div class="sk-corner-motif"></div>
-      <div class="sk-top">
-        <span class="sk-icon">🌐</span>
-        <span class="sk-badge">01</span>
-      </div>
-      <h3>HTML &amp; CSS</h3>
-      <p>Responsive layouts, modern UI patterns, animations and visual design for the web.</p>
-      <div class="sk-bar-wrap">
-        <div class="sk-bar"><div class="sk-fill sk-fill-1" data-w="80"></div></div>
-        <span class="sk-pct">80%</span>
-      </div>
-    </div>
-    <div class="sk-card reveal delay-2" data-tilt>
-      <div class="sk-corner-motif"></div>
-      <div class="sk-top">
-        <span class="sk-icon">💻</span>
-        <span class="sk-badge">02</span>
-      </div>
-      <h3>C Programming</h3>
-      <p>Logic building, algorithms, data structures and fundamental programming concepts.</p>
-      <div class="sk-bar-wrap">
-        <div class="sk-bar"><div class="sk-fill sk-fill-2" data-w="65"></div></div>
-        <span class="sk-pct">65%</span>
-      </div>
-    </div>
-    <div class="sk-card reveal delay-3" data-tilt>
-      <div class="sk-corner-motif"></div>
-      <div class="sk-top">
-        <span class="sk-icon">🎨</span>
-        <span class="sk-badge">03</span>
-      </div>
-      <h3>Graphic Design</h3>
-      <p>Visual hierarchy, color theory, typography and creative composition.</p>
-      <div class="sk-bar-wrap">
-        <div class="sk-bar"><div class="sk-fill sk-fill-3" data-w="70"></div></div>
-        <span class="sk-pct">70%</span>
-      </div>
-    </div>
-    <div class="sk-card reveal delay-4" data-tilt>
-      <div class="sk-corner-motif"></div>
-      <div class="sk-top">
-        <span class="sk-icon">🧠</span>
-        <span class="sk-badge">04</span>
-      </div>
-      <h3>Problem Solving</h3>
-      <p>Breaking complex problems into elegant, efficient and creative solutions.</p>
-      <div class="sk-bar-wrap">
-        <div class="sk-bar"><div class="sk-fill sk-fill-4" data-w="75"></div></div>
-        <span class="sk-pct">75%</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ░░░░░░░░░ PROJECTS ░░░░░░░░░ -->
-<section id="projects" class="section projects-section">
-  <div class="sec-header reveal">
-    <span class="sec-num-np">०४</span>
-    <div>
-      <p class="sec-eyebrow">My Work</p>
-      <h2 class="sec-title">Projects I've <em>Built</em></h2>
-    </div>
-  </div>
-
-  <div class="projects-grid">
-    <div class="proj-card proj-featured reveal delay-1" data-tilt>
-      <div class="proj-flag-stripe"></div>
-      <div class="proj-head">
-        <span class="proj-idx">०१</span>
-        <div class="proj-tags">
-          <span class="ptag">HTML</span>
-          <span class="ptag">CSS</span>
-          <span class="ptag live">● Live</span>
-        </div>
-      </div>
-      <h3>Portfolio Website</h3>
-      <p>A personal developer portfolio with Nepali-inspired design, modern animations and fully responsive layout — crafted with pride.</p>
-      <div class="proj-foot">
-        <span class="proj-year">2026</span>
-        <a href="#" class="proj-link">View Project ↗</a>
-      </div>
-    </div>
-
-    <div class="proj-card reveal delay-2" data-tilt>
-      <div class="proj-flag-stripe"></div>
-      <div class="proj-head">
-        <span class="proj-idx">०२</span>
-        <div class="proj-tags">
-          <span class="ptag">C Lang</span>
-          <span class="ptag done">● Complete</span>
-        </div>
-      </div>
-      <h3>Calculator</h3>
-      <p>A command-line calculator in C supporting all arithmetic operations, built to sharpen programming fundamentals.</p>
-      <div class="proj-foot">
-        <span class="proj-year">2025</span>
-        <a href="https://github.com/shreejalghimire" class="proj-link" target="_blank">GitHub ↗</a>
-      </div>
-    </div>
-
-    <div class="proj-card proj-soon reveal delay-3">
-      <div class="soon-inner">
-        <div class="soon-icon">⛰️</div>
-        <h3>Climbing Higher</h3>
-        <p>New projects in the pipeline — like summiting Everest, one step at a time.</p>
-        <div class="dot-loader"><span></span><span></span><span></span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- VIDEO -->
-  <div class="video-wrap reveal delay-4">
-    <div class="video-head">
-      <span class="vtag">▶ Learning Journey</span>
-      <span class="vsub">A window into my dev world</span>
-    </div>
-    <div class="video-box">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen title="Learning"></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- ░░ FOOTER ░░ -->
-<footer class="footer">
-  <div class="footer-mountains">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,80 L0,50 L100,20 L200,45 L320,10 L440,40 L540,18 L660,42 L760,15 L880,38 L980,20 L1100,45 L1200,22 L1320,48 L1440,30 L1440,80Z" fill="rgba(185,28,28,.07)"/>
+  <!-- mountain silhouette -->
+  <div class="mtn-silhouette">
+    <svg viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,160 L0,110 L90,60 L180,95 L280,35 L380,80 L460,50 L540,75 L640,20 L740,60 L840,28 L920,65 L1000,42 L1080,75 L1180,38 L1280,80 L1380,55 L1440,80 L1440,160Z" fill="rgba(0,0,0,0.35)"/>
+      <path d="M0,160 L0,130 L120,95 L220,120 L320,75 L420,110 L520,85 L620,108 L720,72 L820,100 L920,80 L1020,105 L1120,85 L1220,112 L1320,90 L1440,108 L1440,160Z" fill="rgba(0,0,0,0.5)"/>
+      <path d="M0,160 L0,148 L180,128 L360,145 L540,122 L720,140 L900,125 L1080,142 L1260,130 L1440,140 L1440,160Z" fill="rgba(0,0,0,0.65)"/>
     </svg>
   </div>
+</section>
+
+<!-- ░░ ABOUT ░░ -->
+<section id="about" class="section section-bg2">
+  <div class="sec-label">About Me</div>
+  <h2 class="sec-title reveal">The <span>person</span> behind the screen</h2>
+
+  <div class="color-bar">
+    <span class="cb-b"></span><span class="cb-w"></span><span class="cb-r"></span><span class="cb-g"></span><span class="cb-y"></span>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>Hey! I'm Shreejal — a Grade 11 Computer Science student living in Kathmandu. I started learning to code because I wanted to actually build stuff, not just use it.</p>
+      <p>Growing up surrounded by the Himalayas, I've learned that reaching any peak takes patience and one small step at a time. I bring that same mindset to every project I work on.</p>
+      <p>Right now I'm focused on HTML, CSS, and learning JavaScript. I also love graphic design and have been exploring C programming this year.</p>
+      <div class="about-tags">
+        <span class="atag">🎓 NEB Grade 11</span>
+        <span class="atag">🏔 Kathmandu</span>
+        <span class="atag">🌐 Web Dev</span>
+        <span class="atag">🎨 Design</span>
+        <span class="atag">💻 C Programming</span>
+        <span class="atag">📚 Still Learning</span>
+      </div>
+    </div>
+
+    <div class="about-fun reveal d2">
+      <div class="fun-card">
+        <h4 id="cnt1">0</h4>
+        <p>Projects built so far</p>
+      </div>
+      <div class="fun-card">
+        <h4 id="cnt2">0</h4>
+        <p>Technologies learning</p>
+      </div>
+      <div class="fun-card">
+        <h4 style="font-size:1.5rem;color:var(--gold);">∞</h4>
+        <p>Cups of tea while coding ☕</p>
+      </div>
+      <div class="fun-card">
+        <h4 style="font-size:1.5rem;color:var(--gold);">100%</h4>
+        <p>Passion for building things 🔥</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ SKILLS ░░ -->
+<section id="skills" class="section">
+  <div class="sec-label">Skills</div>
+  <h2 class="sec-title reveal">What I <span>know</span></h2>
+
+  <div class="skills-grid">
+    <div class="sk-card reveal d1">
+      <span class="sk-icon">🌐</span>
+      <h3>HTML & CSS</h3>
+      <p>Building web pages, making them look nice and work on any screen size.</p>
+      <div class="sk-bar"><div class="sk-fill sk-fill-1" data-w="80"></div></div>
+      <span class="sk-pct">80%</span>
+    </div>
+    <div class="sk-card reveal d2">
+      <span class="sk-icon">💻</span>
+      <h3>C Programming</h3>
+      <p>Logic, algorithms, loops — the fundamentals of programming thinking.</p>
+      <div class="sk-bar"><div class="sk-fill sk-fill-2" data-w="65"></div></div>
+      <span class="sk-pct">65%</span>
+    </div>
+    <div class="sk-card reveal d3">
+      <span class="sk-icon">🎨</span>
+      <h3>Graphic Design</h3>
+      <p>Color theory, typography and making things look visually pleasing.</p>
+      <div class="sk-bar"><div class="sk-fill sk-fill-3" data-w="70"></div></div>
+      <span class="sk-pct">70%</span>
+    </div>
+    <div class="sk-card reveal d4">
+      <span class="sk-icon">🧠</span>
+      <h3>Problem Solving</h3>
+      <p>Breaking big problems into smaller pieces and figuring things out.</p>
+      <div class="sk-bar"><div class="sk-fill sk-fill-4" data-w="75"></div></div>
+      <span class="sk-pct">75%</span>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ PROJECTS ░░ -->
+<section id="projects" class="section section-bg2">
+  <div class="sec-label">Projects</div>
+  <h2 class="sec-title reveal">Stuff I've <span>built</span></h2>
+
+  <div class="color-bar">
+    <span class="cb-b"></span><span class="cb-w"></span><span class="cb-r"></span><span class="cb-g"></span><span class="cb-y"></span>
+  </div>
+
+  <div class="projects-grid" style="grid-template-columns:minmax(280px,600px);">
+    <div class="proj-card reveal d1">
+      <span class="proj-num">01</span>
+      <div class="proj-tags">
+        <span class="ptag">HTML</span>
+        <span class="ptag">CSS</span>
+        <span class="ptag live">● Live</span>
+      </div>
+      <h3>Portfolio Website</h3>
+      <p>My very first real project! A personal portfolio site with a Nepal-inspired theme. This is the site you're on right now — built completely by me for a school assignment.</p>
+      <div class="proj-footer">
+        <span class="proj-yr">2026</span>
+        <a href="#" class="proj-link">You're here! ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FUN ZONE ░░ -->
+<section class="fun-section">
+  <div class="sec-label">Interactive</div>
+  <h2 class="sec-title reveal">Have some <span>fun</span> 🎮</h2>
+
+  <div class="fun-grid" style="grid-template-columns:1fr;max-width:600px;margin:0 auto;">
+
+    <!-- Typing Speed mini-game -->
+    <div class="typing-game reveal d1">
+      <div class="game-title">⌨️ Quick Typing Test</div>
+      <p style="font-size:0.8rem;color:var(--muted);margin-bottom:8px;">Type the word before time runs out!</p>
+      <div class="word-display" id="wordDisplay">Press Start!</div>
+      <input class="type-input" id="typeInput" placeholder="Type here..." disabled/>
+      <div style="display:flex;gap:10px;margin-top:10px;align-items:center;flex-wrap:wrap;">
+        <button class="btn-red" id="startBtn" style="padding:9px 20px;font-size:0.78rem;">Start ▶</button>
+        <div class="game-stats">
+          <div>Score: <span id="gameScore">0</span></div>
+          <div>Time: <span id="gameTime">10</span>s</div>
+          <div>Best: <span id="gameBest">0</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <span class="footer-np">नमस्ते</span>
-      <span class="footer-name">Shreejal Ghimire</span>
-      <span class="footer-np-flag">🇳🇵</span>
+      <span>Shreejal</span> <span style="color:var(--gold)">Ghimire</span> 🇳🇵
     </div>
-    <p>© 2026 · Built with ❤️ from Kathmandu, Nepal</p>
+    <span class="footer-copy">© 2026 · Made with ❤️ from Kathmandu</span>
     <div class="footer-links">
       <a href="https://github.com/shreejalghimire" target="_blank">GitHub ↗</a>
       <a href="contact.html">Contact</a>
@@ -390,94 +266,183 @@
 </footer>
 
 <script>
-/* ── MOUNTAIN + SNOW CANVAS ── */
-const mc = document.getElementById('mountainCanvas');
-const mctx = mc.getContext('2d');
-let W, H;
-function resizeMC() { W = mc.width = window.innerWidth; H = mc.height = window.innerHeight; }
-resizeMC(); window.addEventListener('resize', resizeMC);
-
-// Snow particles
-const sc = document.getElementById('snowCanvas');
-const sctx = sc.getContext('2d');
-function resizeSC() { sc.width = sc.offsetWidth; sc.height = sc.offsetHeight; }
-resizeSC();
-const flakes = Array.from({length:80},()=>({
-  x: Math.random()*1440, y: Math.random()*600,
-  r: Math.random()*2+.5,
-  vx: (Math.random()-.5)*.3,
-  vy: Math.random()*.6+.2,
-  a: Math.random()*.5+.2
-}));
-function snowTick(){
-  sctx.clearRect(0,0,sc.width,sc.height);
-  flakes.forEach(f=>{
-    f.x+=f.vx; f.y+=f.vy;
-    if(f.y>sc.height) { f.y=0; f.x=Math.random()*sc.width; }
-    sctx.beginPath(); sctx.arc(f.x,f.y,f.r,0,Math.PI*2);
-    sctx.fillStyle=`rgba(255,255,255,${f.a})`; sctx.fill();
-  });
-  requestAnimationFrame(snowTick);
-}
-snowTick();
-
 /* ── PRAYER FLAGS ── */
-const flagColors = ['#003893','#ffffff','#DC143C','#009B4E','#F5A623'];
-const flagContainer = document.getElementById('prayerFlags');
-const line = document.createElement('div');
-line.className = 'flag-line';
-for(let i=0;i<16;i++){
-  const flag = document.createElement('div');
-  flag.className='flag-pennant';
-  flag.style.background = flagColors[i%5];
-  line.appendChild(flag);
+const colors = ['#003893','#F0F0F0','#C0392B','#009B4E','#F39C12'];
+const pf = document.getElementById('prayerFlags');
+for(let i=0;i<28;i++){
+  const d = document.createElement('div');
+  d.className='pflag';
+  d.style.background = colors[i%5];
+  pf.appendChild(d);
 }
-flagContainer.appendChild(line);
 
 /* ── CURSOR ── */
-const cur = document.getElementById('cursor'), ring = document.getElementById('cursorRing');
+const dot = document.getElementById('cursorDot');
+const ring = document.getElementById('cursorRing');
 let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function a(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
-document.querySelectorAll('a,button,[data-tilt]').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.classList.add('big');ring.classList.add('big');});
-  el.addEventListener('mouseleave',()=>{cur.classList.remove('big');ring.classList.remove('big');});
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  dot.style.left=mx+'px'; dot.style.top=my+'px';
+});
+(function lerp(){
+  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(lerp);
+})();
+document.querySelectorAll('a,button,.sk-card,.proj-card,.mood-btn,.fun-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{dot.classList.add('hovered');ring.classList.add('hovered');});
+  el.addEventListener('mouseleave',()=>{dot.classList.remove('hovered');ring.classList.remove('hovered');});
 });
 
-/* ── NAVBAR ── */
-window.addEventListener('scroll',()=>{
-  document.getElementById('navbar').classList.toggle('scrolled',scrollY>60);
+/* ── NAVBAR SCROLL ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('stuck', scrollY > 50);
 });
 
 /* ── HAMBURGER ── */
-const ham=document.getElementById('hamburger'), mob=document.getElementById('mobOverlay');
-ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.classList.toggle('no-scroll');});
-document.getElementById('mobClose').addEventListener('click',closeMob);
-function closeMob(){ham.classList.remove('open');mob.classList.remove('open');document.body.classList.remove('no-scroll');}
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobMenu');
+ham.addEventListener('click', () => {
+  ham.classList.toggle('open');
+  mob.classList.toggle('open');
+  document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+});
+function closeMob(){
+  ham.classList.remove('open');
+  mob.classList.remove('open');
+  document.body.style.overflow='';
+}
 
-/* ── SCROLL REVEAL ── */
-new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.12})
-  .observe||(entries=>{entries.forEach(e=>e.target.classList.add('visible'));});
-const revEls=document.querySelectorAll('.reveal');
-const revObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.12});
-revEls.forEach(el=>revObs.observe(el));
+/* ── SNOW CANVAS ── */
+const sc = document.getElementById('snowCanvas');
+const sctx = sc.getContext('2d');
+function resizeSC(){ sc.width=sc.offsetWidth; sc.height=sc.offsetHeight; }
+resizeSC(); window.addEventListener('resize', resizeSC);
+const flakes = Array.from({length:60},()=>({
+  x:Math.random()*1440, y:Math.random()*600,
+  r:Math.random()*2+.4,
+  vx:(Math.random()-.5)*.3, vy:Math.random()*.5+.15,
+  a:Math.random()*.45+.15
+}));
+function snowLoop(){
+  sctx.clearRect(0,0,sc.width,sc.height);
+  flakes.forEach(f=>{
+    f.x+=f.vx; f.y+=f.vy;
+    if(f.y>sc.height){f.y=0;f.x=Math.random()*sc.width;}
+    sctx.beginPath();sctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+    sctx.fillStyle=`rgba(255,255,255,${f.a})`;sctx.fill();
+  });
+  requestAnimationFrame(snowLoop);
+}
+snowLoop();
+
+/* ── AVATAR CARD TILT ── */
+const ac = document.getElementById('avatarCard');
+ac.addEventListener('mousemove', e => {
+  const r = ac.getBoundingClientRect();
+  const x = ((e.clientX-r.left)/r.width-.5)*18;
+  const y = ((e.clientY-r.top)/r.height-.5)*-18;
+  ac.style.transform=`perspective(600px) rotateY(${x}deg) rotateX(${y}deg) scale(1.04)`;
+});
+ac.addEventListener('mouseleave', () => ac.style.transform='');
 
 /* ── SKILL BARS ── */
-const fills=document.querySelectorAll('.sk-fill');
-const barObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w+'%';}}),{threshold:.5});
+const fills = document.querySelectorAll('.sk-fill');
+const barObs = new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting) e.target.style.width=e.target.dataset.w+'%';
+}),{threshold:.4});
 fills.forEach(f=>barObs.observe(f));
 
-/* ── COUNTERS ── */
-function countUp(el,target){let s=null;(function step(ts){if(!s)s=ts;const p=Math.min((ts-s)/1600,1);el.textContent=Math.floor(p*target);if(p<1)requestAnimationFrame(step);else el.textContent=target.toLocaleString();})(performance.now());}
-const nums=document.querySelectorAll('.sb-num');
-const cntObs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){countUp(e.target,+e.target.dataset.target);cntObs.unobserve(e.target);}}),{threshold:.5});
-nums.forEach(n=>cntObs.observe(n));
+/* ── SCROLL REVEAL ── */
+const revObs = new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting) e.target.classList.add('visible');
+}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
 
-/* ── TILT ── */
-document.querySelectorAll('[data-tilt]').forEach(c=>{
-  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=((e.clientX-r.left)/r.width-.5)*14,y=((e.clientY-r.top)/r.height-.5)*-14;c.style.transform=`perspective(700px) rotateY(${x}deg) rotateX(${y}deg) scale(1.03)`;});
-  c.addEventListener('mouseleave',()=>c.style.transform='perspective(700px) rotateY(0) rotateX(0) scale(1)');
+/* ── COUNTERS ── */
+function countUp(el, target, suffix=''){
+  let s=null;
+  (function step(ts){
+    if(!s)s=ts;
+    const p=Math.min((ts-s)/1400,1);
+    el.textContent=Math.floor(p*target)+suffix;
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target+suffix;
+  })(performance.now());
+}
+const cntObs = new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    const id=e.target.id;
+    if(id==='cnt1') countUp(e.target,1,'+');
+    if(id==='cnt2') countUp(e.target,4,'+');
+    cntObs.unobserve(e.target);
+  }
+}),{threshold:.5});
+document.querySelectorAll('#cnt1,#cnt2').forEach(n=>cntObs.observe(n));
+
+/* ── TYPING GAME ── */
+const nepalWords = ['namaste','nepal','coding','html','kathmandu','mountain','rivers','temple','culture','design','website','project','student','school','computer','creative'];
+let gameActive=false, score=0, best=0, timer=null, timeLeft=10;
+const wordDisplay=document.getElementById('wordDisplay');
+const typeInput=document.getElementById('typeInput');
+const startBtn=document.getElementById('startBtn');
+const gameScore=document.getElementById('gameScore');
+const gameTime=document.getElementById('gameTime');
+const gameBest=document.getElementById('gameBest');
+let currentWord='';
+
+function newWord(){
+  currentWord = nepalWords[Math.floor(Math.random()*nepalWords.length)];
+  wordDisplay.innerHTML='';
+  currentWord.split('').forEach(ch=>{
+    const s=document.createElement('span');
+    s.textContent=ch;
+    wordDisplay.appendChild(s);
+  });
+  typeInput.value='';
+}
+
+function startGame(){
+  score=0; timeLeft=10; gameActive=true;
+  gameScore.textContent=score;
+  gameTime.textContent=timeLeft;
+  startBtn.textContent='Playing...';
+  startBtn.disabled=true;
+  typeInput.disabled=false;
+  typeInput.focus();
+  newWord();
+  timer=setInterval(()=>{
+    timeLeft--;
+    gameTime.textContent=timeLeft;
+    if(timeLeft<=0){
+      clearInterval(timer);
+      gameActive=false;
+      typeInput.disabled=true;
+      startBtn.disabled=false;
+      startBtn.textContent='Play Again ▶';
+      if(score>best){best=score;gameBest.textContent=best;}
+      wordDisplay.innerHTML=`<span style="color:var(--gold)">Score: ${score}! 🎉</span>`;
+    }
+  },1000);
+}
+
+typeInput.addEventListener('input', () => {
+  if(!gameActive) return;
+  const typed = typeInput.value.trim().toLowerCase();
+  const spans = wordDisplay.querySelectorAll('span');
+  spans.forEach((s,i)=>{
+    if(i < typed.length) s.className = typed[i]===currentWord[i]?'correct':'wrong';
+    else s.className='';
+  });
+  if(typed === currentWord){
+    score++;
+    gameScore.textContent=score;
+    newWord();
+  }
 });
+
+startBtn.addEventListener('click', startGame);
+
 </script>
 </body>
 </html>
