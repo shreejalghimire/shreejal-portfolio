@@ -134,6 +134,15 @@ img { max-width: 100%; }
 .nav-links a:hover { color: var(--text); }
 .nav-links a:hover::after { width: 100%; }
 
+/* ── ACTIVE NAV LINK ── */
+.nav-links a.nav-active {
+  color: var(--gold);
+}
+.nav-links a.nav-active::after {
+  width: 100%;
+  background: var(--gold);
+}
+
 .nav-gh {
   font-family: 'Fira Code', monospace;
   font-size: 0.75rem;
